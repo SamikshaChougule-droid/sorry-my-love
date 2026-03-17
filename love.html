@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Why I Love You</title>
 
 <style>
-
 body{
-margin-top:120px;
 font-family:Arial;
 text-align:center;
-background:#ffd6e0;
+margin-top:120px;
+background:#ffc2d1;
 }
+
+h1{color:#ff4d6d}
 
 button{
 padding:12px 22px;
@@ -22,7 +24,6 @@ color:white;
 font-size:16px;
 cursor:pointer;
 }
-
 </style>
 </head>
 
@@ -30,36 +31,34 @@ cursor:pointer;
 
 <h1>Reasons I Love You ❤️</h1>
 
-<p id="text">Click the button 😊</p>
+<p id="reasonText">Click the button</p>
 
-<button onclick="reason()">Show Reason 💕</button>
-
+<button onclick="showReason()">Show Reason 💕</button>
 <br>
-
-<button onclick="next()">Next 💌</button>
+<button onclick="nextPage()">Next</button>
 
 <script>
 
 let reasons=[
 "You always make me smile 😊",
-"You make my life happier",
 "You care about me",
 "You support me",
 "You understand me",
-"You make my days better",
+"You make my life happier",
 "You are my favorite person",
-"You make life beautiful",
-"I feel happy with you ❤️",
+"You make ordinary days special",
+"I feel safe with you",
+"You make my world beautiful ❤️",
 "Sweet little Bunny I Love the most in This Life...💋❤",
 "I Love youu so much My Darling..😚💕"
 ];
 
-function reason(){
-document.getElementById("text").innerText=
+function showReason(){
+document.getElementById("reasonText").innerText=
 reasons[Math.floor(Math.random()*reasons.length)];
 }
 
-function next(){
+function nextPage(){
 window.location.href="quiz.html";
 }
 
