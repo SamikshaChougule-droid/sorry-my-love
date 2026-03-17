@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <title>My Apology</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,41 +13,27 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-font-family:Poppins, sans-serif;
-background:#f3f5fb;
+background:linear-gradient(135deg,#f6f7fb,#e9ecf5);
+font-family:Poppins;
 }
 
 .container{
 background:white;
 padding:50px;
 width:520px;
-border-radius:12px;
+border-radius:15px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 text-align:center;
 }
 
-h1{
-color:#333;
-}
-
-p{
-color:#666;
-line-height:1.7;
-}
-
 button{
 margin-top:20px;
-padding:14px 28px;
+padding:12px 30px;
 border:none;
 border-radius:6px;
 background:#6c8ed9;
 color:white;
-font-size:16px;
 cursor:pointer;
-}
-
-button:hover{
-background:#567ad0;
 }
 
 </style>
@@ -62,21 +47,21 @@ background:#567ad0;
 
 <p>
 I know I made a mistake.<br>
-I never meant to hurt you.<br>
-You mean a lot to me and I truly regret it.
+I never wanted to hurt you.
 </p>
 
 <p>
-I hope you can forgive me.
+You are important to me<br>
+and I truly regret what happened.
 </p>
 
-<button onclick="nextPage()">Something I Want To Tell You</button>
+<button onclick="next()">Next</button>
 
 </div>
 
 <script>
-function nextPage(){
-window.location.href="love.html";
+function next(){
+window.location.href="memories.html"
 }
 </script>
 
