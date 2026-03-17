@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>A Small Quiz For You 💌</title>
+<title>Cute Quiz For You 💖</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -19,40 +19,32 @@ font-family:Poppins, sans-serif;
 background:linear-gradient(135deg,#f6f7fb,#e9ecf5);
 }
 
-/* card */
-
 .container{
 background:white;
-padding:50px;
+padding:40px;
 width:520px;
 border-radius:12px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 text-align:center;
 }
 
-/* heading */
-
 h1{
-font-size:36px;
+font-size:34px;
 color:#333;
-margin-bottom:20px;
+margin-bottom:10px;
 }
 
-/* question */
-
-.question{
+#question{
 font-size:20px;
 color:#555;
-margin-bottom:20px;
+margin:20px 0;
 }
 
-/* options */
-
-button{
+.option{
 display:block;
 width:100%;
-margin:10px 0;
-padding:14px;
+margin:8px 0;
+padding:12px;
 font-size:16px;
 border:none;
 border-radius:6px;
@@ -62,20 +54,26 @@ cursor:pointer;
 transition:0.3s;
 }
 
-button:hover{
+.option:hover{
 background:#567ad0;
-transform:scale(1.03);
 }
 
-#result{
+#nextBtn{
 margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:6px;
+background:#ff6b6b;
+color:white;
+font-size:16px;
+cursor:pointer;
+display:none;
+}
+
+#score{
+margin-top:15px;
 font-size:18px;
 color:#444;
-}
-
-.nextBtn{
-margin-top:25px;
-display:none;
 }
 
 </style>
@@ -86,47 +84,113 @@ display:none;
 
 <div class="container">
 
-<h1>Little Quiz For You 💖</h1>
+<h1>Small Quiz About Us 💌</h1>
 
-<div class="question">
-How special are you to me? 🥺
-</div>
+<div id="question"></div>
 
-<button onclick="checkAnswer(false)">Just a normal friend 🙂</button>
-<button onclick="checkAnswer(false)">Someone I know 😅</button>
-<button onclick="checkAnswer(true)">Someone very special to me 💞</button>
-<button onclick="checkAnswer(false)">I don't know 🤔</button>
+<div id="answers"></div>
 
-<div id="result"></div>
+<button id="nextBtn" onclick="nextQuestion()">Next ➜</button>
 
-<button class="nextBtn" onclick="nextPage()">Continue 💌</button>
+<div id="score"></div>
 
 </div>
 
 
 <script>
 
-function checkAnswer(correct){
+const quiz = [
+{
+question:"How important are you to me? 🥺",
+answers:[
+{text:"Just a normal friend", correct:false},
+{text:"Someone I know", correct:false},
+{text:"Someone very special 💖", correct:true},
+{text:"I don't know", correct:false}
+]
+},
 
-var result=document.getElementById("result");
-var next=document.querySelector(".nextBtn");
+{
+question:"What do I miss the most? 💭",
+answers:[
+{text:"Your smile 😊", correct:true},
+{text:"Nothing", correct:false},
+{text:"Your phone", correct:false},
+{text:"Your homework", correct:false}
+]
+},
+
+{
+question:"Why did I make this website? 💌",
+answers:[
+{text:"To say sorry", correct:true},
+{text:"For fun", correct:false},
+{text:"For coding practice", correct:false},
+{text:"By mistake", correct:false}
+]
+}
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+function showQuestion(){
+
+let q = quiz[currentQuestion];
+
+document.getElementById("question").innerText = q.question;
+
+let answersHTML = "";
+
+q.answers.forEach((a,i)=>{
+answersHTML += `<button class="option" onclick="selectAnswer(${a.correct})">${a.text}</button>`;
+});
+
+document.getElementById("answers").innerHTML = answersHTML;
+
+}
+
+function selectAnswer(correct){
 
 if(correct){
-result.innerHTML="Correct 💖 You really are very special to me.";
-next.style.display="block";
+score++;
+}
+
+document.getElementById("nextBtn").style.display="inline-block";
+
+}
+
+function nextQuestion(){
+
+currentQuestion++;
+
+document.getElementById("nextBtn").style.display="none";
+
+if(currentQuestion < quiz.length){
+showQuestion();
 }
 else{
-result.innerHTML="Hmm not exactly 🥺 Try again.";
-}
+
+document.getElementById("question").innerHTML="Quiz Finished 💖";
+
+document.getElementById("answers").innerHTML=
+`<p>You scored ${score} / ${quiz.length} 🥺</p>
+<p>No matter the score, you are still very special to me 💞</p>
+<button onclick="goNext()" class="option">Continue 💌</button>`;
 
 }
 
-function nextPage(){
+}
+
+function goNext(){
 window.location.href="love.html";
 }
 
+showQuestion();
+
 </script>
 
-</body>
 
+</body>
 </html>
