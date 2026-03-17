@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
-<title>Forgive Me</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Please Forgive Me 💔</title>
 
 <style>
 
@@ -15,50 +14,119 @@ display:flex;
 justify-content:center;
 align-items:center;
 font-family:Poppins, sans-serif;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+background:linear-gradient(135deg,#f6f7fb,#e9ecf5);
 }
+
+/* card */
 
 .container{
 background:white;
 padding:50px;
 width:520px;
 border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 text-align:center;
 }
 
+/* heading */
+
+h1{
+font-size:38px;
+color:#333;
+margin-bottom:20px;
+}
+
+/* paragraph */
+
+p{
+color:#666;
+font-size:18px;
+line-height:1.7;
+margin-bottom:15px;
+}
+
+/* buttons */
+
 button{
-margin-top:20px;
-padding:14px 26px;
+margin:10px;
+padding:14px 30px;
+font-size:16px;
 border:none;
 border-radius:6px;
-background:#ff4d6d;
+background:#6c8ed9;
 color:white;
-font-size:16px;
 cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
-background:#e63950;
+background:#567ad0;
+transform:scale(1.05);
+}
+
+#noBtn{
+background:#ff6b6b;
+}
+
+#noBtn:hover{
+background:#ff4d4d;
 }
 
 </style>
 </head>
 
+
 <body>
 
 <div class="container">
 
-<h1>Will You Forgive Me? ❤️</h1>
+<h1>Can You Forgive Me? 🥺💖</h1>
 
-<button onclick="celebrate()">Yes</button>
+<p>
+I know I hurt you, and that thought has been sitting heavily in my heart.
+If I could go back and change that moment, I would do it instantly.
+You never deserved to feel upset because of me.
+</p>
+
+<p>
+You are someone incredibly special to me.
+Your smile, your presence, and the way you make ordinary moments feel
+so much brighter means more than I can explain.
+</p>
+
+<p>
+I truly regret my mistake, and I promise I will learn from it.
+All I want is the chance to make things right again
+and bring back the happiness between us. 💕
+</p>
+
+<p>
+So with all honesty and sincerity,
+I want to ask you one simple question…  
+Will you forgive me? 💗
+</p>
+
+<button onclick="yes()">Yes, I Forgive You 💖</button>
+<button id="noBtn" onclick="moveButton()">Not Yet 😅</button>
 
 </div>
 
+
 <script>
-function celebrate(){
-document.body.innerHTML="<h1 style='color:white;text-align:center'>Thank You For Forgiving Me ❤️🥰</h1>";
+
+function yes(){
+alert("Thank you for forgiving me 💖 It means everything to me.");
 }
+
+function moveButton(){
+var btn = document.getElementById("noBtn");
+btn.style.position="absolute";
+btn.style.left=Math.random()*80+"%";
+btn.style.top=Math.random()*80+"%";
+}
+
 </script>
+
 
 </body>
 </html>
