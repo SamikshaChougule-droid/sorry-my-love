@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Forgive Me</title>
 
 <style>
-
 body{
-margin-top:150px;
 font-family:Arial;
 text-align:center;
+margin-top:150px;
 background:linear-gradient(135deg,#ff9a9e,#fad0c4);
 }
 
+h1{color:white}
+
 button{
-padding:15px 25px;
+padding:15px 26px;
 border:none;
 border-radius:30px;
-background:#ff4d6d;
-color:white;
+background:white;
+color:#ff4d6d;
 font-size:18px;
 cursor:pointer;
 }
-
 </style>
 </head>
 
@@ -29,15 +30,13 @@ cursor:pointer;
 
 <h1>Will You Forgive Me? 🥺❤️</h1>
 
-<button onclick="yes()">Yes ❤️</button>
+<button onclick="celebrate()">Yes ❤️</button>
 
 <script>
+function celebrate(){
+document.body.innerHTML="<h1 style='color:white'>Thank You For Forgiving Me ❤️🥰</h1>";
 
-function yes(){
-
-document.body.innerHTML="<h1>Thank You For Forgiving Me ❤️🥰</h1>";
-
-for(let i=0;i<200;i++){
+for(let i=0;i<150;i++){
 let heart=document.createElement("div");
 heart.innerHTML="❤️";
 heart.style.position="fixed";
@@ -45,9 +44,7 @@ heart.style.left=Math.random()*100+"vw";
 heart.style.fontSize="25px";
 document.body.appendChild(heart);
 }
-
 }
-
 </script>
 
 </body>
