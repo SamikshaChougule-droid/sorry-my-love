@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
-<title>You Mean So Much To Me 💞</title>
+<title>Why I Love You</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -16,10 +15,8 @@ display:flex;
 justify-content:center;
 align-items:center;
 font-family:Poppins, sans-serif;
-background:linear-gradient(135deg,#f6f7fb,#e9ecf5);
+background:#f6f7fb;
 }
-
-/* main card */
 
 .container{
 background:white;
@@ -30,89 +27,61 @@ box-shadow:0 10px 30px rgba(0,0,0,0.1);
 text-align:center;
 }
 
-/* heading */
-
 h1{
-font-size:38px;
 color:#333;
-margin-bottom:20px;
 }
-
-/* paragraphs */
 
 p{
 color:#666;
-font-size:18px;
-line-height:1.7;
-margin-bottom:15px;
 }
 
-/* button */
-
 button{
-margin-top:25px;
-padding:14px 30px;
-font-size:16px;
+margin-top:15px;
+padding:12px 24px;
 border:none;
 border-radius:6px;
 background:#6c8ed9;
 color:white;
 cursor:pointer;
-transition:0.3s;
 }
 
 button:hover{
 background:#567ad0;
-transform:scale(1.05);
 }
 
 </style>
 </head>
 
-
 <body>
 
 <div class="container">
 
-<h1>You Mean So Much To Me 💞</h1>
+<h1>Reasons I Love You ❤️</h1>
 
-<p>
-Sometimes we don’t realize how important someone is to us
-until we imagine life without them.
-And when I think about that,
-I realize just how much you truly mean to me.
-</p>
+<p id="reason">Click the button to see one reason.</p>
 
-<p>
-You are someone who brings light into my world.
-Your smile can brighten my worst days,
-and your presence makes everything feel warmer and happier.
-</p>
-
-<p>
-Every conversation, every laugh,
-and even the quiet moments we share
-are memories that I deeply cherish. 💗
-</p>
-
-<p>
-That is why hurting you is something
-I regret from the bottom of my heart.
-You deserve kindness, respect, and love —
-not pain from someone who cares about you so much. 🥺
-</p>
-
-<p>
-And that is exactly why I wanted to say this to you.
-Because you are truly special to me. 💖
-</p>
-
-<button onclick="nextPage()">One Last Thing 💌</button>
+<button onclick="showReason()">Show Reason</button>
+<br>
+<button onclick="nextPage()">Next</button>
 
 </div>
 
-
 <script>
+
+let reasons=[
+"You always make me smile",
+"You care about me",
+"You support me",
+"You make my life happier",
+"You understand me",
+"You are my favorite person",
+"You make ordinary days special"
+];
+
+function showReason(){
+document.getElementById("reason").innerText=
+reasons[Math.floor(Math.random()*reasons.length)];
+}
 
 function nextPage(){
 window.location.href="quiz.html";
@@ -121,5 +90,4 @@ window.location.href="quiz.html";
 </script>
 
 </body>
-
 </html>
